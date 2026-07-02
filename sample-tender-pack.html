@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Tender Pack - The Tender Desk</title>
+  <style>
+    :root {
+      --paper: #f7f3ec;
+      --ink: #1f1a17;
+      --muted: #5b5149;
+      --brand: #1c3a2e;
+      --brand-soft: #e2ece7;
+      --line: #d6cabc;
+      --card: #fffdf9;
+      --accent: #ead8c3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(28, 58, 46, 0.09), transparent 28%),
+        linear-gradient(180deg, #fbf6ef 0%, var(--paper) 100%);
+      color: var(--ink);
+      font-family: "Source Sans 3", "Aptos", "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    .sample-ribbon {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #1c3a2e;
+      color: #fff;
+      text-align: center;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+    .sample-ribbon a { color: #7fd3a3; text-decoration: underline; margin-left: 8px; }
+
+    .page {
+      width: min(1100px, calc(100% - 32px));
+      margin: 24px auto 40px;
+      background: var(--card);
+      border: 1px solid rgba(214, 202, 188, 0.8);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(68, 50, 35, 0.12);
+    }
+
+    .hero {
+      padding: 36px 40px 28px;
+      background:
+        linear-gradient(135deg, rgba(28, 58, 46, 0.08), rgba(28, 58, 46, 0) 56%),
+        linear-gradient(180deg, #fffdf9 0%, #f9f3eb 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .logo-wrap { font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: var(--brand); letter-spacing: .3px; }
+    .logo-wrap span { font-weight: 400; color: var(--muted); font-size: 15px; display: block; margin-top: 4px; }
+
+    .company-card {
+      min-width: 250px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(214, 202, 188, 0.85);
+      color: var(--muted);
+    }
+
+    .kicker {
+      margin: 28px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+    }
+
+    h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); margin-bottom: 10px; }
+
+    .hero p { margin: 0; max-width: 720px; color: var(--muted); font-size: 1.05rem; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid rgba(214, 202, 188, 0.85);
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--brand);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .content { padding: 32px 40px 40px; }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .panel {
+      background: #fffaf3;
+      border: 1px solid rgba(214, 202, 188, 0.85);
+      border-radius: 18px;
+      padding: 20px 22px;
+    }
+
+    .panel h2 { font-size: 2rem; margin-bottom: 12px; }
+    .panel p, .panel li { color: var(--muted); }
+    .panel ul, .panel ol { margin: 12px 0 0 20px; padding: 0; }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+      margin: 18px 0 30px;
+    }
+
+    .total-card {
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--brand-soft), #eef3f0);
+      border: 1px solid rgba(28, 58, 46, 0.14);
+    }
+
+    .total-card .label {
+      display: block;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .total-card .amount { font-size: clamp(2rem, 3vw, 3rem); font-weight: 700; }
+    .total-card p { margin: 10px 0 0; color: var(--muted); }
+
+    .quote-section { margin-bottom: 28px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 { font-size: 2rem; }
+    .section-subtotal { color: var(--brand); font-weight: 700; white-space: nowrap; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    thead { background: #f2e8dc; }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(214, 202, 188, 0.7);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) { background: rgba(247, 243, 236, 0.5); }
+    .subhead td { background: rgba(234, 216, 195, 0.35); color: #59483c; }
+    .money { text-align: right; white-space: nowrap; }
+    .section-note { margin: 10px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+    .list-columns { columns: 2 280px; column-gap: 28px; }
+    .list-columns li { break-inside: avoid; margin-bottom: 10px; }
+
+    .acceptance {
+      margin-top: 34px;
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fffaf3 0%, #fff 100%);
+      border: 1px solid rgba(214, 202, 188, 0.85);
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .signature-box { min-height: 92px; border-bottom: 1px solid var(--ink); padding-top: 54px; color: var(--muted); }
+    .footer { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); }
+
+    .back-cta { text-align: center; padding: 30px 16px 50px; }
+    .back-cta a { display: inline-block; background: #1c3a2e; color: #fff; font-weight: 700; padding: 14px 26px; border-radius: 10px; text-decoration: none; }
+
+    @media (max-width: 860px) {
+      .intro-grid, .summary-strip { grid-template-columns: 1fr; }
+      .content, .hero { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sample-ribbon">
+  SAMPLE PACK - a real engagement, anonymised (builder &amp; client names changed, all pricing/structure genuine)
+  <a href="index.html">&larr; Back to The Tender Desk</a>
+</div>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="logo-wrap">Riverside Build Ltd<span>(sample builder name)</span></div>
+        <div class="company-card">
+          <strong>Riverside Build Ltd</strong><br>
+          [Builder's business address]<br>
+          [Builder's phone]<br>
+          Prepared by The Tender Desk
+        </div>
+      </div>
+      <div class="kicker">Final quotation</div>
+      <h1>New single-storey 1-bed studio dwelling</h1>
+      <p>Rear of [Sample Address], London</p>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <strong>Quote Ref</strong>
+          SAMPLE/001
+        </div>
+        <div class="meta-card">
+          <strong>Date</strong>
+          Illustrative
+        </div>
+        <div class="meta-card">
+          <strong>Valid For</strong>
+          30 days from the date above
+        </div>
+        <div class="meta-card">
+          <strong>Client</strong>
+          Mr J Client<br>[Sample Address]<br>London
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="intro-grid">
+        <article class="panel">
+          <h2>Project</h2>
+          <p>Works as described in the Schedule of Work vers 1.1 priced final workbook, carried out in accordance with the architect's specification, current NHBC Standards 2026 and Building Regulations 2010.</p>
+          <p style="margin-top: 12px;">Architectural drawings: C1 IFC (Issued for Construction). Structural and drainage drawings as listed within the priced schedule.</p>
+        </article>
+        <article class="panel">
+          <h2>Pricing Notes</h2>
+          <ul>
+            <li>Prices are taken from <code>Schedule of work vers 1.1 PRICED FINAL.xlsx</code> only.</li>
+            <li>All workbook prices already include contractor overheads and profit.</li>
+            <li>VAT is not included in the quoted total.</li>
+            <li>The only <strong>PC Sum</strong> item is mini-piles in Section 4 at <strong>£20,235</strong>.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="summary-strip">
+        <div class="total-card">
+          <span class="label">Quotation total</span>
+          <div class="amount">£245,870</div>
+          <p>VAT is not included in the quoted total. No additional overheads or profit have been added beyond the final priced workbook.</p>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Section</th><th>Description</th><th class="money">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>General</td><td class="money">£20,020</td></tr>
+            <tr><td>2</td><td>Demolition and Protection</td><td class="money">£16,750</td></tr>
+            <tr><td>3</td><td>Drainage</td><td class="money">£9,430</td></tr>
+            <tr><td>4</td><td>Foundations, Walls and Roof</td><td class="money">£140,365</td></tr>
+            <tr><td>5</td><td>External Works</td><td class="money">£15,530</td></tr>
+            <tr><td>6</td><td>Fixtures, Fittings and Finishes</td><td class="money">£18,150</td></tr>
+            <tr><td>7</td><td>Plumbing and Heating</td><td class="money">£11,795</td></tr>
+            <tr><td>8</td><td>Electrical Circuits and Fittings</td><td class="money">£13,830</td></tr>
+            <tr>
+              <td></td>
+              <td><strong>Quotation Total (VAT Exclusive)</strong></td>
+              <td class="money"><strong>£245,870</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>1. General</h2>
+          <div class="section-subtotal">Subtotal £20,020</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr><td>1.1</td><td>Dimensions: The contractor is to check all dimensions on site, and advise the client of any discrepancies, particularly before ordering doors, windows, etc</td><td></td><td class="money">£665</td></tr>
+            <tr><td>1.2</td><td>Standards: All work listed in this document to be carried out in accordance with current NHBC Standards 2026, Building Regulations 2010, Approved Codes of Practice, etc. Unless otherwise stated all products to be installed as per manufacturers recommendations.</td><td></td><td class="money">£215</td></tr>
+            <tr><td>1.3</td><td>Contract: The Client and contractor have signed the FMB Domestic Building Contract, which is now in place</td><td></td><td class="money">£400</td></tr>
+            <tr><td>1.4</td><td>The contractor will take on the role of Principal Contractor for complying with the Construction (Design and Management) Regulations 2015 (CDM 2015) with responsibilities which include construction phase plan, welfare facilities, competence of workers, site safety and information</td><td></td><td class="money">£10,390</td></tr>
+            <tr><td>1.5</td><td>The contractor will ensure that the Building Control inspector is notified at key stages of the build in order to inspect and sign-off all work as required</td><td></td><td class="money">£1,285</td></tr>
+            <tr><td></td><td>Builder hourly rate for additional work outside the fixed quotation</td><td>Hourly rate</td><td class="money">£500/hr</td></tr>
+            <tr><td></td><td>Electrician hourly rate for additional work outside the fixed quotation</td><td>Hourly rate</td><td class="money">£505/hr</td></tr>
+            <tr><td></td><td>Plumber hourly rate for additional work outside the fixed quotation</td><td>Hourly rate</td><td class="money">£500/hr</td></tr>
+            <tr><td>1.7</td><td>The contractor is responsible for providing skips as and when required to dispose of materials and waste. Allowance for grab lorry collections included</td><td></td><td class="money">£4,900</td></tr>
+            <tr><td>1.8</td><td>The Main Contractor is responsible for purchasing parking permits for all vehicles parked on public roads at/near the site for the use of the employees of the contractor or subcontractors working on the project</td><td></td><td class="money">£2,165</td></tr>
+          </tbody>
+        </table>
+        <p class="section-note">Section 1 subtotal follows the final priced workbook exactly, including the three hourly rate lines recorded in the source schedule.</p>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>2. Demolition and Protection</h2>
+          <div class="section-subtotal">Subtotal £16,750</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr class="subhead"><td></td><td><strong>Garage Demolition</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>Garden Protection and Demolition</strong></td><td></td><td></td></tr>
+            <tr><td>2.1</td><td>Strip out and dispose of existing electrical fittings and wiring, cold water feed, drainpipe and sink, and existing metal garage door and supporting structure</td><td></td><td class="money">£615</td></tr>
+            <tr><td>2.2</td><td>Strip off and dispose of existing roof finish removing all existing flashings, guttering, felt and chipboard to expose existing rafters and steel beams</td><td></td><td class="money">£465</td></tr>
+            <tr><td>2.3</td><td>Strip off and retain existing rafters and steel beams which can be reused and dispose of remaining rafters and steel beams that cannot be reused</td><td></td><td class="money">£735</td></tr>
+            <tr><td>2.4</td><td>Strip out and dispose existing timber and glass screen at garden end of garage</td><td></td><td class="money">£325</td></tr>
+            <tr><td>2.5</td><td>Take down brickwork wall as shown on the drawings, retaining reusable stock bricks for reuse and hardcore</td><td></td><td class="money">£1,565</td></tr>
+            <tr><td>2.6</td><td>Take up existing yorkstone flagstones by garden entrance to the garage and set aside for re-use</td><td></td><td class="money">£750</td></tr>
+            <tr><td>2.7</td><td>Take up and dispose of existing concrete floor of the garage, retaining sufficient hardcore for reuse</td><td></td><td class="money">£1,545</td></tr>
+            <tr><td>2.8</td><td>Protect existing garden beds that are to be retained and place temporary protection over the lawn for material/equipment storage</td><td></td><td class="money">£500</td></tr>
+            <tr><td>2.9</td><td>Strip out and dispose of existing wooden door between the street and the hardstanding; install two temporary plywood doors with padlockable gates</td><td></td><td class="money">£650</td></tr>
+            <tr><td>2.10</td><td>Cut back and reinstall steel pergola sections, disposing of redundant pieces</td><td></td><td class="money">£725</td></tr>
+            <tr><td>2.11</td><td>Remove and dispose of retaining wall section, extend hardstanding depth/width, retain surface drain</td><td></td><td class="money">£2,380</td></tr>
+            <tr><td>2.12</td><td>Remove and dispose of excess topsoil; prune protected tree to allow space for new wall (see Tree Method Statement)</td><td></td><td class="money">£545</td></tr>
+            <tr><td>2.13</td><td>Remove and dispose of plants/shrubs, watering system and garden lighting in the area becoming the extended living space</td><td></td><td class="money">£740</td></tr>
+            <tr><td>2.14</td><td>Excavate and dispose of topsoil/subsoil to required depth, taking care to limit damage to the protected tree's root system</td><td></td><td class="money">£4,760</td></tr>
+            <tr><td>2.15</td><td>Take up existing yorkstone flagstones and set aside for re-use; take down and dispose of wood climbing frame</td><td></td><td class="money">£450</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>3. Drainage</h2>
+          <div class="section-subtotal">Subtotal £9,430</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr class="subhead"><td></td><td><strong>New underground surface water drain runs</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>New underground foul water drain runs</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>Branch/wastes/traps</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>New rainwater downpipes</strong></td><td></td><td></td></tr>
+            <tr><td>3</td><td>On setting up site, confirm location/direction of all foul and rainwater drainage via drain survey and physical inspection; report any conflicts to Client</td><td></td><td class="money">£220</td></tr>
+            <tr><td>3.1</td><td>Excavate drain trenches, lay bedding, supply and install rainwater pipes, surface water sewers, inspection chamber, non-return valve and rodding eyes to connect to the existing system; reinstate paving on completion</td><td></td><td class="money">£4,125</td></tr>
+            <tr><td>3.2</td><td>Excavate drain trenches, lay bedding, supply and install foul water pipes, sewers, inspection chamber and drainage points to connect to the existing system; reinstate paving on completion</td><td></td><td class="money">£2,430</td></tr>
+            <tr><td>3.3</td><td>Supply and install branch wastes, traps and standpipes for washing machine/heat pump, plus pipework and soil vent pipe for the toilet</td><td></td><td class="money">£2,010</td></tr>
+            <tr><td>3.4</td><td>Supply and install downpipes clipped to wall, connected to gutters and new underground run</td><td></td><td class="money">£325</td></tr>
+            <tr><td>3.5</td><td>Rod through; leave all drains, gullies and inspection covers clean and clear on completion</td><td></td><td class="money">£320</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>4. Foundations, Walls and Roof</h2>
+          <div class="section-subtotal">Subtotal £140,365</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr class="subhead"><td></td><td><strong>Foundation</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>Walls</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>Roof</strong></td><td></td><td></td></tr>
+            <tr><td>4.1</td><td>Excavate and dispose of top soil/subsoil to required level to install piles and construct reinforced concrete ground beams</td><td></td><td class="money">£4,090</td></tr>
+            <tr><td>4.2</td><td>Supply and install 18 steel screw mini-piles to meet required loadings as shown on the drawings</td><td>PC Sum</td><td class="money">£20,235</td></tr>
+            <tr><td>4.3</td><td>Supply materials and construct 8 reinforced concrete ground beams as shown on the drawings</td><td></td><td class="money">£7,285</td></tr>
+            <tr><td>4.4</td><td>Supply materials and construct beam and block concrete flooring with specified void space and vents</td><td></td><td class="money">£4,680</td></tr>
+            <tr><td>4.5</td><td>Supply and install one steel column as specified on the drawing</td><td></td><td class="money">£1,685</td></tr>
+            <tr><td>4.6</td><td>Supply materials and construct retaining walls as shown on the drawings</td><td></td><td class="money">£6,640</td></tr>
+            <tr><td>4.7</td><td>Supply and apply waterproofing membrane to all external walls that lie below ground level</td><td></td><td class="money">£5,205</td></tr>
+            <tr><td>4.8</td><td>Supply materials and construct floor build-up including insulation, screed and underfloor heating (final floor finish client supply)</td><td></td><td class="money">£5,635</td></tr>
+            <tr><td>4.9</td><td>Supply materials and construct new internal and external walls from reclaimed brick, insulated block, plywood and plasterboard finishes</td><td></td><td class="money">£30,550</td></tr>
+            <tr><td>4.10</td><td>Open up and rebuild existing wall for new windows and doors, replacing coping stones after installation</td><td></td><td class="money">£1,975</td></tr>
+            <tr><td>4.11</td><td>Supply and install 5 high-level windows to the dimensions shown, with lintels/steel beams and cills</td><td></td><td class="money">£7,385</td></tr>
+            <tr><td>4.12</td><td>Supply and install patio doors to the dimensions shown, with lintel as specified</td><td></td><td class="money">£6,920</td></tr>
+            <tr><td>4.13</td><td>Supply and install two external doors with steps as required for specified floor levels</td><td></td><td class="money">£4,680</td></tr>
+            <tr><td>4.14</td><td>Install concrete padstones and air/ventilation vents as shown on the drawings</td><td></td><td class="money">£625</td></tr>
+            <tr><td>4.15</td><td>Supply materials and construct new roof with steel beams, timber rafters and trimmers as specified</td><td></td><td class="money">£11,890</td></tr>
+            <tr><td>4.16</td><td>Install two low profile lanterns to manufacturer requirements (client supply)</td><td></td><td class="money">£930</td></tr>
+            <tr><td>4.17</td><td>Roof build-up: rubber roofing, firrings, plywood, insulation layers, dropped ceiling and plasterboard/skim finish to achieve required fall</td><td></td><td class="money">£15,130</td></tr>
+            <tr><td>4.18</td><td>Supply and install battens, upstands, ventilation and coping details to top of new walls (colour to client choice)</td><td></td><td class="money">£4,555</td></tr>
+            <tr><td>4.19</td><td>Lift coping stones on existing wall, install DPM and reinstate coping stones with pointed joints</td><td></td><td class="money">£270</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>5. External Works</h2>
+          <div class="section-subtotal">Subtotal £15,530</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr class="subhead"><td></td><td><strong>Garden of the new property</strong></td><td></td><td></td></tr>
+            <tr class="subhead"><td></td><td><strong>Existing garden</strong></td><td></td><td></td></tr>
+            <tr><td>5.1</td><td>Install new garden fence with posts set in concrete (fence panels client supply)</td><td></td><td class="money">£2,160</td></tr>
+            <tr><td>5.2</td><td>Lower garden patio - excavate and install pavement slabs on compacted hardcore and concrete blinding (slabs client supply)</td><td></td><td class="money">£3,260</td></tr>
+            <tr><td>5.3</td><td>Steps - excavate and build upstands and install treads to match pavement slabs (treads client supply)</td><td></td><td class="money">£3,660</td></tr>
+            <tr><td>5.4</td><td>Install coping stones and wooden seat on top of the retaining wall (coping/seat client supply)</td><td></td><td class="money">£1,155</td></tr>
+            <tr><td>5.5</td><td>Supply and connect up two garden taps for irrigation system</td><td></td><td class="money">£795</td></tr>
+            <tr><td>5.6</td><td>Supply and connect up two external electricity sockets for garden lighting system</td><td></td><td class="money">£1,130</td></tr>
+            <tr><td>5.8</td><td>Extend hard standing - excavate and install reclaimed slabs on compacted hardcore and concrete blinding</td><td></td><td class="money">£1,395</td></tr>
+            <tr><td>5.9</td><td>Supply and build reclaimed brick retaining wall at the edge of hard standing</td><td></td><td class="money">£1,385</td></tr>
+            <tr><td>5.10</td><td>Supply and connect up two sets of external sockets on wall external to the garage</td><td></td><td class="money">£365</td></tr>
+            <tr><td>5.11</td><td>Supply and install new water standpipe and tap</td><td></td><td class="money">£225</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>6. Fixtures, Fittings and Finishes</h2>
+          <div class="section-subtotal">Subtotal £18,150</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr><td>6.1</td><td>Install bathroom sink, shower head and taps, shower stall/tray, toilet and towel rail (fixtures client supply); install floor/wall tiles (tiles client supply)</td><td></td><td class="money">£6,500</td></tr>
+            <tr><td>6.2</td><td>Supply and install sliding door for the bathroom, cupboards, bedroom door and utility room doors (door furniture client supply, contractor to install)</td><td></td><td class="money">£5,830</td></tr>
+            <tr><td>6.3</td><td>Supply and install skirting boards in the bedroom, kitchen and living room (design to be agreed with Client)</td><td></td><td class="money">£1,425</td></tr>
+            <tr><td>6.4</td><td>All internal walls and ceilings to be painted with undercoat and final coat (colour/paint client choice/supply)</td><td></td><td class="money">£3,295</td></tr>
+            <tr><td>6.5</td><td>All internal woodwork to be painted with primer, undercoat and final coat (colour/paint client choice/supply)</td><td></td><td class="money">£1,100</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>7. Plumbing and Heating</h2>
+          <div class="section-subtotal">Subtotal £11,795</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr><td>7.1</td><td>Mains water supply from external meter point to stopcock, in accordance with water authority regulations</td><td></td><td class="money">£3,040</td></tr>
+            <tr><td>7.2</td><td>Cold water feeds with isolation valves to heat pump, washing machine, kitchen sink, dishwasher, bathroom sink, shower and toilet</td><td></td><td class="money">£2,920</td></tr>
+            <tr><td>7.3</td><td>Hot water feeds with isolation valves from heat pump hot water tank to kitchen sink, bathroom sink and shower</td><td></td><td class="money">£1,460</td></tr>
+            <tr><td>7.4</td><td>Supply and install three underfloor heating circuits fed by heat pump, with manifold, actuators, wiring centre and smart thermostat</td><td></td><td class="money">£2,500</td></tr>
+            <tr><td>7.5</td><td>Install ducting in dropped ceiling for heat pump air extraction, plus external vents (ducting client supply)</td><td></td><td class="money">£1,875</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="quote-section">
+        <div class="section-head">
+          <h2>8. Electrical Circuits and Fittings</h2>
+          <div class="section-subtotal">Subtotal £13,830</div>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Description</th><th>Type</th><th class="money">Amount</th></tr></thead>
+          <tbody>
+            <tr><td>8.1</td><td>External electricity supply ducting from boundary to meter box, in accordance with network operator regulations</td><td></td><td class="money">£3,105</td></tr>
+            <tr><td>8.2</td><td>Supply and install fuse board in the plant room to British Standards, connected to the meter box</td><td></td><td class="money">£1,220</td></tr>
+            <tr><td>8.3</td><td>Supply and install power networks to all sockets, light fittings and switches, connected to fuse board (light fittings client supply)</td><td></td><td class="money">£4,860</td></tr>
+            <tr><td>8.4</td><td>Supply and install wiring networks to heat pump, appliances and extractor fans with isolation switches (appliances client supply)</td><td></td><td class="money">£3,355</td></tr>
+            <tr><td>8.5</td><td>Supply and install fire alarms in the bedroom, kitchen and living room to British Standards</td><td></td><td class="money">£795</td></tr>
+            <tr><td>8.6</td><td>Supply and install broadband connection from boundary to desk space</td><td></td><td class="money">£495</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="panel">
+        <h2>Client Supply Items</h2>
+        <ol class="list-columns">
+          <li>Roof lanterns are client supply items. Contractor installation is included in Section 4.16.</li>
+          <li>Fence panels are to be supplied by the client. Posts and installation are included in Section 5.1.</li>
+          <li>Paving slabs, step treads, coping stones and timber seat are to be supplied by the client where stated. The related builder's work to install them is included in Sections 5.2 to 5.4.</li>
+          <li>Bathroom sanitaryware, bathroom fittings and bathroom tiles are to be supplied by the client. Installation is included in Section 6.1.</li>
+          <li>Heat pump compatible ducting is client supply. The ducting route and vents are included in Section 7.5.</li>
+          <li>Paint for internal walls, ceilings and woodwork is to be supplied by the client. Application is included in Sections 6.4 and 6.5.</li>
+          <li>Door furniture is to be supplied by the client. Installation is included in Section 6.2.</li>
+          <li>Wall lights, kitchen unit lighting and pendant lights are to be supplied by the client. Associated wiring and installation are included in Section 8.3.</li>
+          <li>Appliances including hob, oven, fridge/freezer, dishwasher and washing machine are to be supplied by the client. Associated wiring and connections are included in Section 8.4.</li>
+          <li>Final floor finish is to be supplied by the client. The substrate and floor build-up are included in Section 4.8.</li>
+        </ol>
+      </section>
+
+      <section class="panel" style="margin-top: 24px;">
+        <h2>Not Priced in This Quotation</h2>
+        <ol class="list-columns">
+          <li>Kitchen units, kitchen sink and kitchen fittings are client supply and install. They are not priced in this quotation.</li>
+          <li>Exhaust air heat pump is client supply and install. It is not priced in this quotation.</li>
+          <li>Solar panels, battery and inverter are client supply and install. They are not priced in this quotation.</li>
+          <li>EV charging point is client supply and install. It is not priced in this quotation.</li>
+          <li>Garden irrigation systems and garden lighting systems are client supply and install. They are not priced in this quotation, although related taps and sockets are included where listed.</li>
+          <li>Decking, topsoil, planting, waste bins and bike store are client supply and install. They are not priced in this quotation.</li>
+          <li>New garage door between the hardstanding and pavement is client supply and install. It is not priced in this quotation.</li>
+        </ol>
+      </section>
+
+      <section class="panel" style="margin-top: 24px;">
+        <h2>Conditions</h2>
+        <ol>
+          <li>This quotation is valid for <strong>30 days</strong> from the date shown above.</li>
+          <li>Payment terms are to be agreed and set out in the building contract before start on site.</li>
+          <li>Contract form: <strong>FMB Domestic Building Contract</strong> (signed and in place).</li>
+          <li>All work is to comply with current NHBC Standards 2026, Building Regulations 2010 and applicable statutory requirements.</li>
+          <li>Except for the mini-piles item identified as <strong>PC Sum</strong>, all other priced items are quoted sums taken directly from the final priced workbook.</li>
+          <li>VAT is not included in the quoted total.</li>
+        </ol>
+      </section>
+
+      <section class="acceptance">
+        <h2>Acceptance</h2>
+        <p>To accept this quotation, please sign below and return a copy.</p>
+        <div class="signature-grid">
+          <div class="signature-box">Client signature</div>
+          <div class="signature-box">Print name</div>
+          <div class="signature-box">Date</div>
+        </div>
+        <div class="footer">
+          <strong>Riverside Build Ltd</strong> (sample builder name)<br>
+          [Builder's business address]<br>
+          [Builder's phone]
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="back-cta">
+    <a href="index.html">&larr; Back to The Tender Desk</a>
+  </div>
+
+</body>
+</html>
