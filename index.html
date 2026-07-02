@@ -365,10 +365,11 @@
         <h3>Prefer a form? Send the basics.</h3>
         <p class="small">I'll come back to you personally, usually same day.</p>
         <form id="leadform">
-          <input type="hidden" name="access_key" value="WEB3FORMS_KEY_PLACEHOLDER">
-          <input type="hidden" name="subject" value="New Tender Desk enquiry">
+          <input type="hidden" name="_subject" value="New Tender Desk enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="source" id="f-source" value="direct">
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required placeholder="First name"></div>
           <div class="field"><label for="f-phone">Mobile</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="07..."></div>
           <div class="field"><label for="f-job">The job</label>
@@ -437,7 +438,7 @@ document.getElementById('leadform').addEventListener('submit', async function(e)
   var err = document.getElementById('formerr');
   err.style.display = 'none';
   try{
-    var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: new FormData(form)});
+    var res = await fetch('https://formsubmit.co/ajax/789155eb8dd0f7405b71a1cfd989ff78', {method:'POST', body: new FormData(form), headers:{'Accept':'application/json'}});
     if(res.ok){
       form.style.display = 'none';
       document.getElementById('thanks').style.display = 'block';
