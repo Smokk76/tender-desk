@@ -21,50 +21,57 @@
   .btn:hover{background:#15291f;transform:translateY(-1px)}
   .btn-gold{background:var(--gold)}
   .btn-gold:hover{background:var(--gold-d)}
-  .btn-wa{background:var(--wa);color:#fff;font-weight:700}
+  .btn-wa{background:var(--wa);color:#fff;font-weight:700;font-size:17px;padding:16px 30px}
   .btn-wa:hover{background:var(--wa-d)}
   .btn-wa svg{flex:0 0 auto}
 
   /* topbar */
   .topbar{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:9px;font-weight:400;letter-spacing:1px;font-size:14px;text-transform:uppercase;color:var(--accent)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:400;letter-spacing:1.5px;font-size:18px;text-transform:uppercase;color:var(--accent)}
   .logo svg{flex:0 0 auto}
   .logo .wm b{font-weight:700}
   .topbar .phone{font-weight:500;color:var(--accent);text-decoration:none;font-size:15px}
   .topbar .phone span{color:var(--ink-soft);font-weight:400;font-size:13px}
 
   /* hero */
-  .hero{background:linear-gradient(100deg,rgba(20,32,26,.97) 0%,rgba(20,32,26,.88) 46%,rgba(28,45,38,.72) 100%);background-color:#16271f;color:#fff;padding:60px 0 64px}
-  .hero h1{font-size:42px;line-height:1.1;font-weight:500;letter-spacing:-.5px;max-width:720px}
+  .hero{background:linear-gradient(100deg,rgba(16,27,21,.93) 0%,rgba(16,27,21,.82) 46%,rgba(22,36,29,.62) 100%),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=60') center/cover no-repeat;background-color:#16271f;color:#fff;padding:74px 0 78px}
+  .hero h1{font-size:50px;line-height:1.08;font-weight:500;letter-spacing:-.7px;max-width:760px}
   .hero h1 b{font-weight:700}
-  .hero .sub{margin-top:18px;font-size:19px;color:#d4ddd6;font-weight:300;max-width:600px}
-  .hero .ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .hero .alt{font-size:14px;color:#9fb5aa}
-  .hero .alt a{color:#cdd8d2}
-  .trust{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;color:#cdd8d2}
-  .trust div{display:flex;align-items:center;gap:7px}
+  .hero .sub{margin-top:18px;font-size:20px;color:#e2eae4;font-weight:300;max-width:560px}
+  .hero .ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero .alt{font-size:14px;color:#b9c9bf}
+  .hero .alt a{color:#dbe5dd}
+  .trust{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 24px;font-size:15px;color:#dbe5dd}
+  .trust div{display:flex;align-items:center;gap:8px}
   .trust .tick{color:#7fd3a3;font-weight:700}
 
-  /* proof band (moved up per research: proof before everything) */
+  /* benefits (the 3-4 big pros, right after the hero) */
+  .benefits{padding:56px 0 8px}
+  .bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .benefit{background:var(--wash);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px}
+  .benefit h3{font-size:22px;font-weight:700;color:var(--accent);line-height:1.15}
+  .benefit p{margin-top:9px;font-size:14.5px;color:var(--ink-soft)}
+
+  /* proof band */
   .proof{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .proofgrid{display:grid;grid-template-columns:.9fr 1fr;gap:36px;align-items:center;margin-top:22px}
-  .proofbig{font-size:60px;font-weight:700;line-height:1;color:var(--accent)}
+  .proofbig{font-size:66px;font-weight:700;line-height:1;color:var(--accent)}
   .proofbig span{display:block;font-size:16px;font-weight:400;color:var(--ink-soft);margin-top:10px;max-width:300px}
-  .quote{font-size:21px;font-weight:300;line-height:1.5;max-width:760px}
+  .quote{font-size:20px;font-weight:300;line-height:1.5;max-width:760px}
   .quote b{font-weight:500}
   .byline{margin-top:16px;color:var(--ink-soft);font-size:15px}
 
   /* sections */
   section.block{padding:62px 0}
   .eyebrow{color:var(--gold);font-weight:500;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
-  h2{font-size:30px;font-weight:500;letter-spacing:-.3px;margin-top:8px}
-  .lead{color:var(--ink-soft);font-size:17px;margin-top:12px;max-width:680px}
+  h2{font-size:36px;font-weight:500;letter-spacing:-.5px;margin-top:8px;line-height:1.12}
+  .lead{color:var(--ink-soft);font-size:17px;margin-top:12px;max-width:640px}
 
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px}
   .step{background:var(--wash);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-  .step .n{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
-  .step h4{margin-top:15px;font-size:18px;font-weight:500}
+  .step .n{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+  .step h4{margin-top:15px;font-size:19px;font-weight:700}
   .step p{margin-top:8px;color:var(--ink-soft);font-size:15px}
 
   /* pricing */
@@ -72,7 +79,7 @@
   .pricecard{border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative}
   .pricecard.hot{border:2px solid var(--accent);background:var(--wash)}
   .pricecard .tag{position:absolute;top:-12px;left:26px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
-  .pricecard h3{font-size:20px;font-weight:700}
+  .pricecard h3{font-size:22px;font-weight:700}
   .pricecard .who{color:var(--ink-soft);font-size:14px;margin-top:4px}
   .pricerows{margin-top:20px}
   .pricerow{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-top:1px solid var(--line);font-size:15px}
@@ -80,17 +87,21 @@
   .pricecard .note{margin-top:16px;font-size:13.5px;color:var(--ink-soft)}
   .pricecard .guarantee{margin-top:14px;background:#eaf3ee;border:1px solid #cfe4d8;color:var(--good);border-radius:9px;padding:10px 14px;font-size:14px;font-weight:500}
 
+  /* break image */
+  .breakimg{width:100%;height:340px;object-fit:cover;border-radius:18px;display:block}
+  .breakimg-cap{font-size:13px;color:var(--ink-soft);margin-top:10px;text-align:center}
+
   /* founder story */
   .credit{background:var(--accent);color:#fff;border-radius:18px;padding:40px;margin-top:10px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
-  .credit .big{font-size:46px;font-weight:700;line-height:1;color:#fff;white-space:nowrap}
+  .credit .big{font-size:50px;font-weight:700;line-height:1;color:#fff;white-space:nowrap}
   .credit .big span{display:block;font-size:15px;font-weight:400;color:#9fc2b3;margin-top:8px}
-  .credit h3{font-size:23px;font-weight:500}
-  .credit p{color:#d4ddd6;margin-top:10px;font-size:16px;max-width:560px}
+  .credit h3{font-size:24px;font-weight:500;line-height:1.2}
+  .credit p{color:#d4ddd6;margin-top:12px;font-size:16px;max-width:560px}
 
   /* included grid */
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
   .panel{border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-  .panel h4{font-size:17px;font-weight:500;display:flex;align-items:center;gap:9px}
+  .panel h4{font-size:18px;font-weight:700;display:flex;align-items:center;gap:9px}
   .panel ul{list-style:none;margin-top:14px}
   .panel li{padding:8px 0 8px 26px;position:relative;font-size:15px;color:var(--ink);border-top:1px solid var(--line)}
   .panel li:first-child{border-top:none}
@@ -100,7 +111,7 @@
   /* who / trust */
   .whobox{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:var(--wash);border:1px solid var(--line);border-radius:var(--radius);padding:30px;margin-top:34px}
   .whobox .avatar{width:84px;height:84px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700}
-  .whobox h4{font-size:19px;font-weight:700}
+  .whobox h4{font-size:20px;font-weight:700}
   .whobox p{color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:640px}
 
   /* fit criteria */
@@ -152,15 +163,18 @@
 
   @media(max-width:480px){
     .topbar .phone span{display:none}
-    .topbar .wrap{height:56px}
-    .logo{font-size:11.5px;letter-spacing:.5px}
-    .logo svg{width:20px;height:20px}
+    .topbar .wrap{height:60px}
+    .logo{font-size:14px;letter-spacing:.5px}
+    .logo svg{width:24px;height:24px}
   }
   @media(max-width:860px){
     body{padding-bottom:54px}
     .stickybar{display:flex}
     .proofgrid{grid-template-columns:1fr;gap:22px}
-    .hero h1{font-size:31px}
+    .hero h1{font-size:34px}
+    .hero .sub{font-size:18px}
+    .bgrid{grid-template-columns:1fr 1fr}
+    .benefit h3{font-size:19px}
     .steps{grid-template-columns:1fr}
     .cols{grid-template-columns:1fr}
     .pricing{grid-template-columns:1fr}
@@ -168,7 +182,11 @@
     .credit .big{font-size:40px}
     .whobox{grid-template-columns:1fr}
     .finalcta .inner{grid-template-columns:1fr}
-    h2{font-size:25px}
+    .breakimg{height:220px}
+    h2{font-size:27px}
+  }
+  @media(max-width:520px){
+    .bgrid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -176,16 +194,16 @@
 
 <div class="topbar">
   <div class="wrap">
-    <div class="logo"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="2" stroke="#1c3a2e" stroke-width="2.3"/><path d="M9 13 H23 M9 17 H23 M9 21 H18" stroke="#1c3a2e" stroke-width="2.1" stroke-linecap="round"/><rect x="20.5" y="19" width="6" height="9" fill="#a85a1a"/></svg><span class="wm"><b>The Tender</b> Desk</span></div>
+    <div class="logo"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="2" stroke="#1c3a2e" stroke-width="2.3"/><path d="M9 13 H23 M9 17 H23 M9 21 H18" stroke="#1c3a2e" stroke-width="2.1" stroke-linecap="round"/><rect x="20.5" y="19" width="6" height="9" fill="#a85a1a"/></svg><span class="wm"><b>The Tender</b> Desk</span></div>
     <a class="phone" href="tel:07412605787"><span>Send me a job</span> 07412 605787</a>
   </div>
 </div>
 
-<!-- HERO: WhatsApp-first, no form above the fold -->
+<!-- HERO -->
 <div class="hero">
   <div class="wrap">
     <h1>Stop pricing big tenders in your evenings. <b>Start winning them.</b></h1>
-    <p class="sub">WhatsApp me the job. I price it from real delivered builder costs - not a price book - and hand you a tender pack built to beat the other four builders. Small fee to start. The real money in my fee only lands when you win.</p>
+    <p class="sub">Real builder costs, not a price book. A tender pack built to win - and the real money in my fee only lands when you do.</p>
     <div class="ctas">
       <a class="btn btn-wa" id="wa-hero" href="https://wa.me/447412605787?text=Hi%2C%20I%27ve%20got%20a%20job%20to%20price.%20Can%20you%20take%20a%20look%3F">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z"/></svg>
@@ -194,23 +212,21 @@
       <span class="alt">or <a href="#quote">use the form</a> / call <a href="tel:07412605787">07412 605787</a></span>
     </div>
     <div class="trust">
-      <div><span class="tick">✓</span> First look is free - I tell you straight if it's winnable</div>
+      <div><span class="tick">✓</span> Free first look - a straight winnable-or-not verdict</div>
       <div><span class="tick">✓</span> Priced from real costs, not a price book</div>
-      <div><span class="tick">✓</span> Non-compete in writing - I never touch your client</div>
+      <div><span class="tick">✓</span> White-label - your name on everything, your client stays yours</div>
     </div>
   </div>
 </div>
 
-<!-- PROOF FIRST -->
-<section class="block proof">
+<!-- THE BIG REASONS -->
+<section class="benefits">
   <div class="wrap">
-    <div class="eyebrow">Real job, real numbers</div>
-    <div class="proofgrid">
-      <div class="proofbig">£227k<span>new-build dwelling - won and structured for another London builder</span></div>
-      <div>
-        <p class="quote">A London builder almost turned down a <b>£227,000 new-build</b>. Great on site, but couldn't price a job that size with confidence. We ran it through the system: full takeoff, an estimate from <b>real delivered costs, not a price book</b>, programme, piling tender, pre-start pack. <b>Tender out in days. He won it. He's on site now.</b> My fee: 4%, paid in milestones as the job ran - only because it won.</p>
-        <div class="byline">Signed on a clean 4% agreement. The exact model this desk runs on.</div>
-      </div>
+    <div class="bgrid">
+      <div class="benefit"><h3>Win more jobs</h3><p>Priced from real delivered costs - the number that beats the price-book quotes.</p></div>
+      <div class="benefit"><h3>Keep your evenings</h3><p>Days at my desk, not your nights at the kitchen table.</p></div>
+      <div class="benefit"><h3>Pay when you win</h3><p>Small fee to start. The real money in my fee only exists if the job's yours.</p></div>
+      <div class="benefit"><h3>Your client stays yours</h3><p>White-label pack under your name. I'm the desk, never the face.</p></div>
     </div>
   </div>
 </section>
@@ -221,19 +237,33 @@
     <div class="eyebrow">How it works</div>
     <h2>Your job, turned into a tender that wins it - in days.</h2>
     <div class="steps">
-      <div class="step"><div class="n">1</div><h4>WhatsApp me the job</h4><p>Send the drawings and a line on the job, straight from your phone. If you can send a photo to a client, you can send me a tender.</p></div>
-      <div class="step"><div class="n">2</div><h4>Free first look - a straight verdict</h4><p>Within 24 hours I tell you: winnable or not, and exactly what I'd charge. No price, no pack, no obligation until you say go.</p></div>
-      <div class="step"><div class="n">3</div><h4>You get the pack. You win. You build.</h4><p>Priced from real delivered costs with the exclusions and PC sums that protect your margin. Presented under your name - your client never sees me.</p></div>
+      <div class="step"><div class="n">1</div><h4>Send me the job</h4><p>WhatsApp, call, or the form - a line on the job is enough to start. I'll reply the same day with where to email the full drawing pack (big files don't travel well on WhatsApp).</p></div>
+      <div class="step"><div class="n">2</div><h4>Free first look - a straight verdict</h4><p>Within 24 hours: winnable or not, and exactly what I'd charge. No obligation until you say go.</p></div>
+      <div class="step"><div class="n">3</div><h4>You get the pack. You win. You build.</h4><p>Real-cost pricing with the exclusions and PC sums that protect your margin. Presented under your name.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PRICING: transparent, on the page -->
-<section class="block" style="padding-top:0">
+<!-- PROOF (the real story - after how it works) -->
+<section class="block proof">
+  <div class="wrap">
+    <div class="eyebrow">Real job, real numbers</div>
+    <div class="proofgrid">
+      <div class="proofbig">£227k<span>new-build dwelling - won and structured for another London builder</span></div>
+      <div>
+        <p class="quote">A London builder almost turned down a <b>£227,000 new-build</b> - great on site, but a job that size felt too big to price. Full takeoff, estimate from <b>real delivered costs</b>, programme, piling tender, pre-start pack. <b>Tender out in days. He won it. He's on site now.</b> My fee: 4%, paid as the job ran - only because it won.</p>
+        <div class="byline">Signed on a clean 4% agreement. The exact model this desk runs on.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block">
   <div class="wrap">
     <div class="eyebrow">What it costs</div>
     <h2>Straight prices. On the page. Like a QS won't.</h2>
-    <p class="lead">Two ways to use the desk. Both a fraction of the £800 to £1,600 a QS bills whether you win or lose.</p>
+    <p class="lead">Two ways to use the desk - both a fraction of the £800 to £1,600 a QS bills win or lose.</p>
     <div class="pricing">
       <div class="pricecard">
         <h3>Tender Pack</h3>
@@ -269,18 +299,26 @@
       </ul>
       <p>I turn jobs down - long-shot bids with five builders and no drawings waste your money and my name. If it's not a fit I'll tell you in one message, free.</p>
     </div>
-    <p style="font-size:12px;color:var(--ink-soft);margin-top:16px;max-width:760px">Fees ex VAT. An engagement starts only on a signed one-pager. Mutual non-compete and confidentiality apply - I never pursue your clients or your patch, and your prices stay yours. I never price two builders on the same tender.</p>
+    <p style="font-size:12px;color:var(--ink-soft);margin-top:16px;max-width:760px">Fees ex VAT. An engagement starts only on a signed one-pager. Mutual confidentiality applies - your prices and your client details stay yours. I never price two builders on the same tender.</p>
   </div>
 </section>
 
-<!-- FOUNDER STORY (after pricing: justifies the model once they care) -->
+<!-- BREAK IMAGE -->
+<section style="padding:0 0 62px">
+  <div class="wrap">
+    <img class="breakimg" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=60" alt="Working through drawings at the desk" loading="lazy">
+    <div class="breakimg-cap">The desk work: takeoff, real-cost estimate, scope, exclusions - while you stay on the tools.</div>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
 <section class="block" style="padding-top:0">
   <div class="wrap">
     <div class="credit">
       <div class="big">£1,600<span>what a QS charged me. I still lost the job.</span></div>
       <div>
         <h3>I asked the QS for no-win-no-fee. He said no. So I built it.</h3>
-        <p>He priced my tender off a standard price book - not what it actually costs to build - so it went in high and lost. Then I spent three days checking his numbers anyway, because I didn't trust them. When I asked him to share the risk, he refused. Why would he? He gets paid either way. So I built the desk he wouldn't be: real costs, a small fee to start, and the real money only when the job's won.</p>
+        <p>He priced my tender off a standard price book, it went in high, and it lost. When I asked him to share the risk, he refused - he gets paid either way. So I built the desk he wouldn't be: real costs, a small fee to start, the real money only when the job's won.</p>
       </div>
     </div>
   </div>
@@ -291,7 +329,7 @@
   <div class="wrap">
     <div class="eyebrow">What you get</div>
     <h2>The pack that beats the other four builders.</h2>
-    <p class="lead">Homeowners don't pick the cheapest quote. They pick the one that feels safe and specific next to four vague lump sums. That's what this is built to be.</p>
+    <p class="lead">Clients don't pick the cheapest quote - they pick the one that feels safe and specific next to four vague lump sums.</p>
     <div class="cols">
       <div class="panel inc">
         <h4>In every Tender Pack</h4>
@@ -326,7 +364,7 @@
       <div class="avatar">IG</div>
       <div>
         <h4>Run by Igor - a working London builder, still pricing his own jobs</h4>
-        <p>This isn't an estimating mill or a software subscription. It's one builder's tender desk - built on an AI-driven estimating system trained on real delivered costs from real jobs - opened up to other builders. I answer my own WhatsApp, I give straight verdicts, and if your job isn't winnable I'll say so before you spend a pound.</p>
+        <p>Not an estimating mill, not a software subscription. One builder's tender desk - an AI-driven estimating system trained on real delivered costs from real jobs - opened up to other builders. I answer my own WhatsApp, and if your job isn't winnable I'll say so before you spend a pound.</p>
       </div>
     </div>
   </div>
@@ -338,14 +376,14 @@
     <div class="eyebrow">Straight answers</div>
     <h2>What builders ask me first.</h2>
     <div class="faq">
-      <details open><summary>Are you going to compete with me?</summary><p>No - and it's in writing. There's a mutual non-compete: I don't chase your clients, your patch, or your work type, and I never price two builders on the same tender. Your clients and your prices stay yours, in confidence.</p></details>
+      <details open><summary>Are you going to compete with me?</summary><p>No - and it's in writing. I don't chase your clients, your patch, or your work type, and I never price two builders on the same tender. Everything is white-label: your name on the pack, your client relationship untouched, your prices in confidence.</p></details>
       <details><summary>How are you different from a QS or an online estimating service?</summary><p>A QS prices from a standard price book, overprices the job, loses you the tender - then bills £800 to £1,600 win or lose. The £100 online estimating mills are the same book with a faster turnaround, and what they send you is an estimate, not a tender. I price from real delivered builder costs and I build the full client-facing pack - and the bulk of my fee is tied to you actually winning.</p></details>
       <details><summary>What counts as a "win"?</summary><p>It's defined in writing before we start: you sign a contract, take a deposit, or start on site for the tendered job (or a materially similar scope with that client) within 6 months of submission. If the scope shrinks, the fee shrinks with it, pro-rata. No small print games - the definition is on the one-pager you sign.</p></details>
       <details><summary>I've worked with this architect before - my odds are already good. Why pay the full rate?</summary><p>You shouldn't, and you don't. The win fee prices the odds, and I set it at the free first look from the facts of the tender: repeat relationship, how many bidders, whether there's a favourite in the race. Strong position, fewer bidders - the rate comes down. The fee is on your side either way: it only exists if you win.</p></details>
       <details><summary>What if I don't win?</summary><p>On the Win Desk you've spent £495 - the commitment fee that covers the work - not £1,600. No win fee, no chasing, and the pack is still yours. And if I didn't think it was winnable, I'd have told you at the free look and saved you even that.</p></details>
       <details><summary>Won't you just price it low so it wins and you get paid?</summary><p>No - a job you win at a losing margin is worse than a job you lose, and it would be my name on the number. Every pack states the margin logic: if a job can't be won at a sane margin, my verdict is "don't bid", not a lower price.</p></details>
       <details><summary>How fast can you turn a tender round?</summary><p>Days, not weeks - and not your evenings. The pricing runs on a system built across hundreds of real construction line items and real delivered costs, so a tender that would cost you a week of nights takes the desk a fraction of that.</p></details>
-      <details><summary>Do I have to give you my client?</summary><p>Never. I work behind you. You stay the builder, you keep the client relationship, you present the tender as your own. I'm the desk, not the face.</p></details>
+      <details><summary>How do I get the drawings to you?</summary><p>Message me first - WhatsApp, call, or the form. I'll reply the same day with the desk email for the full drawing pack. Architect PDFs run big, and email carries them cleanly where WhatsApp compresses or refuses them.</p></details>
       <details><summary>What if I just want one job priced to see how it goes?</summary><p>That's exactly the right way to start. Send one job. Get the pack. If it wins you work and saves your evenings, we talk about the next one. No retainer, no lock-in.</p></details>
     </div>
   </div>
@@ -357,7 +395,7 @@
     <div class="inner">
       <div>
         <h2>Got a live tender you're not sure how to price?</h2>
-        <p>WhatsApp me the drawings. Within 24 hours you'll know if it's winnable and exactly what I'd charge. Free, straight, no obligation.</p>
+        <p>Message me the job - within 24 hours you'll know if it's winnable and exactly what I'd charge. Free, straight, no obligation. Drawings follow by email once we're talking.</p>
         <a class="btn btn-wa" id="wa-footer" href="https://wa.me/447412605787?text=Hi%2C%20I%27ve%20got%20a%20job%20to%20price.%20Can%20you%20take%20a%20look%3F">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5-.1-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z"/></svg>
           WhatsApp me the job
@@ -387,14 +425,14 @@
               <option>Under £100k</option>
             </select>
           </div>
-          <div class="field"><label for="f-email">Email <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="f-email">Email <span style="font-weight:400;color:var(--ink-soft)">(for the drawing pack)</span></label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
           <button class="btn btn-gold">Send it over</button>
           <p class="rsvp">Free first look. Your job details and prices stay yours, in confidence.</p>
         </form>
         <div id="thanks" style="display:none;text-align:center;padding:24px 6px">
           <div style="font-size:40px">✓</div>
           <h3 style="margin-top:8px">Got it - thank you</h3>
-          <p class="small">I'll come back to you personally. Have the drawings handy - WhatsApp is the quickest way to get them to me: <a href="https://wa.me/447412605787">07412 605787</a>.</p>
+          <p class="small">I'll come back to you personally, usually same day - and I'll send you the desk email for the full drawing pack.</p>
         </div>
         <p id="formerr" style="display:none;color:#b3261e;font-size:13px;margin-top:10px">Sorry, something went wrong. WhatsApp or call <a href="tel:07412605787" style="color:#b3261e">07412 605787</a> instead.</p>
       </div>
